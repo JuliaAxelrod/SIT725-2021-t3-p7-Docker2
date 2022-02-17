@@ -20,8 +20,13 @@ router.get('/projectTitle/:title',(req,res) => {
 });
 
 // localhost:8080/api/projects/projectDate/2022-02-11 
+// date is greater than Jan 01 1950 - arbitrary
 router.get('/projectDate/:projectDate',(req,res) => {
     console.log ("date???", req.params.projectDate);
+    console.log (typeof (req.params.projectDate))
+    if (!( isNaN (parseInt(req.params.projectDate))) || req.params.projectDate <= -631188000000)
+    res.sendStatus(400);
+    else
     projectService.getProjectByDate(req.params.projectDate, res);
 });
 

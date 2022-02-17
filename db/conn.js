@@ -20,6 +20,10 @@ module.exports = {
   },
   getDB : () => {
     return dbConnection;
+  },
+
+  disconnect : () => {
+    client.close();
   }
 }
 

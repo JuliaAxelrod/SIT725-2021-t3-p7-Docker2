@@ -45,7 +45,7 @@ app.get("/test", function (request, response) {
   response.end("Hello " + user_name + "!");
 });
 
-
+//// MVC - moved to services
 // //socket test
 // io.on('connection', (socket) => {
 //   console.log('a user connected');
@@ -130,6 +130,16 @@ app.get("/test", function (request, response) {
 //       response.sendStatus(200);  // SEND THE RESPONSE!!!!!
 //   });
 // creating MVC - routes
+
+app.get("/add/:n1/:n2", function (request,response)  {
+
+  const a = parseInt(request.params.n1);
+  const b = parseInt(request.params.n2);
+  response.json ({result: a + b || null });
+  // response.sendStatus(200);
+});
+
+
 
 //Connect to DB, if error - terminate, nothing else to do.
 dbo.connect ((err) => {

@@ -1,3 +1,29 @@
+Prac 6 - installed Mocha and Chai
+and created test cases to test project API
+Screen dump is available in ./public/assets/TenTestsPassed-p6\_.jpg
+
+/============ Received the following output:
+^C
+PS C:\Users\Julia\SIT725\sit725-2021-t3-p6-A> npm run test
+
+> project-pitch@0.0.1 test
+> mocha --reporter spec
+
+test get all projects
+✔ returns status code 200 when calling api (259ms)
+✔ returns status code 200 when calling api - By Wrong Title (247ms)
+✔ returns status code 200 when calling api - By Existing Title (252ms)
+✔ returns status code 400 when calling api - date does not exst
+✔ returns status code 200 when calling api - bad date (266ms) ✔ returns exactly 10 projects as body of the response (246ms) ✔ returns status code 200 when calling api - creates new entry
+✔ returns status code 200 when calling api - finds new entry
+(251ms)
+✔ returns an array as the body of request (253ms)
+✔ returns exactly 10 projects as body of the response (258ms)
+
+10 passing (2s)
+
+/================= Tests passed
+
 Repeat of prac 05, routes - API - services.
 Added project delete.
 
