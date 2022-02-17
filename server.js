@@ -35,6 +35,12 @@ var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
+
+app.use((req,res,next) => {
+    req.io = io;
+    return next();
+});
+
 app.use('/api/projects', projectRouter);
 app.use('/api/guides', guidesRouter);
 
@@ -45,18 +51,27 @@ app.get("/test", function (request, response) {
   response.end("Hello " + user_name + "!");
 });
 
-//// MVC - moved to services
-// //socket test
-// io.on('connection', (socket) => {
-//   console.log('a user connected');
-//   socket.on('disconnect', () => {
-//     console.log('user disconnected');
-//   });
-//   setInterval(()=>{
-//     socket.emit('number', parseInt(Math.random()*10));
-//   }, 1000);
+
+//socket test
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+    socket.on ("chat:message", (message) => {
+      console.log(message);
+    socket.broadcast.emit('chat:broadcast', message);
+  });
+
+ 
+  });
+  // setInterval(()=>{
+  //   socket.emit('number', parseInt(Math.random()*10));
+  // }, 1000);
 
 // });
+
+//// MVC - moved to services
 
 // creating MVC - routes
 // const projects = [];
@@ -131,6 +146,8 @@ app.get("/test", function (request, response) {
 //   });
 // creating MVC - routes
 
+
+// TDD demo - tests have been remd out
 app.get("/add/:n1/:n2", function (request,response)  {
 
   const a = parseInt(request.params.n1);

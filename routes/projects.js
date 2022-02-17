@@ -39,7 +39,7 @@ router.get('/projectInfo/:info',(req,res) => {
 // create data
 router.post('/',(req,res) => {
     // req body
-    projectService.insertProject(req.body, res);
+    projectService.insertProject(req.body, res, req.io);
 });
 
 // update data
@@ -50,7 +50,7 @@ router.put('/:id',(req,res) => {
 
 router.delete('/:id',(req,res) => {
     console.log ("Delete???", req.params.id);
-    projectService.deleteProject(req.params.id, res);
+    projectService.deleteProject(req.params.id, res, req.io);
 });
 
 module.exports = router;

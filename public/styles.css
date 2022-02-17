@@ -45,3 +45,21 @@ main {
 #project-image {
   font: cyan-text text-lighten-3;
 }
+
+.msg-left {
+  padding: 3px;
+  float: left;
+  border: 2px white solid;
+  border-radius: 10px;
+  background-color: #bff395;
+  color: black;
+}
+
+.msg-right {
+  padding: 3px;
+  float: right;
+  border: 2px white solid;
+  border-radius: 10px;
+  background-color: rgb(143, 241, 241);
+  color: rgb(32, 11, 71);
+}

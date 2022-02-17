@@ -1,3 +1,6 @@
+Prac 7 - socket.io for project add and project delete added.
+Chat added based on socket.io.
+
 Prac 6 - installed Mocha and Chai
 and created test cases to test project API
 Screen dump is available in ./public/assets/TenTestsPassed-p6\_.jpg

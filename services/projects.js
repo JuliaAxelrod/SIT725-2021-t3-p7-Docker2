@@ -42,16 +42,19 @@ const getProjectByInfo = (pInfo ,res) => {
 });
 }
 
-const insertProject = (project ,res) => {
+const insertProject = (project ,res, io) => {
     projectCollection.insertOne(project, (err, result) => {
     if (err) throw err;
+    io.emit("project:update", project);
     res.send({result: 204});
 });
 }
 
-const deleteProject = (id, res) => {
+const deleteProject = (id, res, io) => {
     projectCollection.deleteOne({projectID: id}, (err, result) => {
     if (err) throw err;
+    // broadcast new project to all via socket.io
+    io.emit("project:delete", id);
     res.send({result: 204});
 });
 }

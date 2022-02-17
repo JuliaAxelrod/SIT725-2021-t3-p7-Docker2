@@ -28,7 +28,7 @@ describe('test get all projects', () => {
                     projectDate: Date.now(),
                     title: 'title ' + i,
                     info: 'info ' + i,
-                    img: 'img ' + i
+                    img: 'Img' + i
                 })
             }
             projectCollection.insertMany(projects,()=>{
