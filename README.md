@@ -1,3 +1,11 @@
+Prac 8 - fixed typo in delete method, retesd=ted, committed to GitHub
+Dockerisation.
+To run container,
+docker run -p 5000:8080 sit725-p8-docker
+to stop container, use docker Desktop app, Ctrl+C does not work.
+First 10 projects to delete and watch how they synch with
+another browser - powers of socket.io are amazing.
+
 Prac 7 - socket.io for project add and project delete added.
 Chat added based on socket.io.
 
