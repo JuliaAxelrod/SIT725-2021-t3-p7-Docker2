@@ -1,3 +1,5 @@
+Prac 8 part 2 - docker-compose.yml includes mongodb service
+
 Prac 8 - fixed typo in delete method, retesd=ted, committed to GitHub
 Dockerisation.
 To run container,
