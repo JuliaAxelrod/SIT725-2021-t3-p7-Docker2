@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+
+  project-app:
+    build: .
+    ports:
+      - "5000:8080"
+
+  mongo-database:
+    image: mongo:latest
+    ports:
+      - "27020:27017"
+    restart: always
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - monogodb-data-cont:/data/db
+
+
+volumes:
+  monogodb-data-cont : {}
